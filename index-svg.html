@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+	<meta charset="utf-8">
+	<title>CSS SVG Icon Animations</title>
+
+	<link rel="dns-prefetch" href="//ajax.googleapis.com">
+
+	<link rel="icon" type="image/x-icon" href="data:image/x-icon;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQEAYAAABPYyMiAAAABmJLR0T///////8JWPfcAAAACXBIWXMAAABIAAAASABGyWs+AAAAF0lEQVRIx2NgGAWjYBSMglEwCkbBSAcACBAAAeaR9cIAAAAASUVORK5CYII=">
+
+	<style>
+	#frame, #background, #speaker, #button, #submit {
+	  opacity: 0;
+	}
+
+	#pointer {
+	  -webkit-animation: pointer-slide 0.5s 2s ease-in-out backwards;
+	}
+
+	#background {
+	  -webkit-transform-origin: 0 100px;
+	  -webkit-animation: background-expand 0.5s 2.2s cubic-bezier(0, 1.65, 0.245, 0.785) forwards;
+	}
+
+	#frame {
+	  -webkit-transform-origin: 50% 50%;
+	  -webkit-animation: frame-scale 0.6s 2.5s cubic-bezier(0, 1.65, 0.245, 0.785) forwards;
+	}
+
+	#speaker {
+	  -webkit-transform-origin: 50% 50%;
+	  -webkit-animation: speaker-expand 0.6s 2.8s forwards;
+	}
+
+	#button {
+	  -webkit-transform-origin: 50% 50%;
+	  -webkit-animation: button-expand 0.7s 2.8s cubic-bezier(0, 1.65, 0.245, 0.785) forwards;
+	}
+
+	#submit {
+	  -webkit-transform-origin: 50% 50%;
+	  -webkit-animation: submit-slide 0.5s 3.0s forwards;
+	}
+
+	/* Go Go Gadget...Animations */
+	@-webkit-keyframes pointer-slide {
+	  0% {
+	    -webkit-transform: translateX(0);
+	  }
+
+	  100% {
+	    -webkit-transform: translateX(50px);
+	    opacity: 0;
+	  }
+	}
+	@-webkit-keyframes background-expand {
+	  0% {
+	    opacity: 1;
+	    -webkit-transform: scaleY(0);
+	  }
+
+	  100% {
+	    opacity: 1;
+	    -webkit-transform: scaleY(1);
+	  }
+	}
+	@-webkit-keyframes frame-scale {
+	  0% {
+	    opacity: 1;
+	    -webkit-transform: scale(0);
+	  }
+
+	  100% {
+	    opacity: 1;
+	    -webkit-transform: scale(1);
+	  }
+	}
+	@-webkit-keyframes speaker-expand {
+	  0% {
+	    opacity: 1;
+	    -webkit-transform: scaleX(0);
+	  }
+
+	  100% {
+	    opacity: 1;
+	    -webkit-transform: scaleX(1);
+	  }
+	}
+	@-webkit-keyframes button-expand {
+	  0% {
+	    opacity: 1;
+	    -webkit-transform: scale(0);
+	  }
+
+	  100% {
+	    opacity: 1;
+	    -webkit-transform: scale(1);
+	  }
+	}
+	@-webkit-keyframes submit-slide {
+	  0% {
+	    opacity: 1;
+	    -webkit-transform: translateY(-100%);
+	  }
+
+	  100% {
+	    opacity: 1;
+	    -webkit-transform: translateY(0);
+	  }
+	}
+	</style>
+</head>
+<body>
+	<!--[if lt IE 7 ]><p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p><![endif]-->
+
+	<h2>CSS SVG Icon Animation</h2>
+
+  <div class="js-loadShare share-svg"></div>
+
+  <script src="https://code.jquery.com/jquery-2.1.0.min.js"></script>
+  <script>
+  $(function(){
+	  $(".js-loadShare").load('https://dl.dropboxusercontent.com/u/2086809/animated-share.svg',function(response){
+	    $(this).addClass("svgLoaded");
+
+	    if(!response){
+	      // Error loading SVG
+	    }
+	  });
+	});
+  </script>
+</body>
+</html>

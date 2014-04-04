@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+	<meta charset="utf-8">
+	<title>CSS Icon Animations</title>
+
+	<link rel="dns-prefetch" href="//ajax.googleapis.com">
+
+	<link rel="icon" type="image/x-icon" href="data:image/x-icon;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQEAYAAABPYyMiAAAABmJLR0T///////8JWPfcAAAACXBIWXMAAABIAAAASABGyWs+AAAAF0lEQVRIx2NgGAWjYBSMglEwCkbBSAcACBAAAeaR9cIAAAAASUVORK5CYII=">
+
+	<style>
+  #interactive {
+    position: relative;
+    margin: 45px 85px 25px;
+    width: 300px;
+    height: 224px;
+  }
+  #interactive div {
+    position: absolute;
+    z-index: 4;
+  }
+  #interactive .speech {
+    top: 15px;
+    left: 8px;
+    width: 128px;
+    height: 127px;
+    border-radius: 10px;
+    background: #f2f2f2;
+  }
+  #interactive .text {
+    left: 30px;
+    width: 84px;
+    height: 8px;
+    background: #253759;
+  }
+  #interactive .text-1 {
+    top: 35px;
+  }
+  #interactive .text-2 {
+    top: 55px;
+  }
+  #interactive .text-3 {
+    top: 75px;
+  }
+  #interactive .text-4 {
+    top: 95px;
+  }
+  #interactive .text-5 {
+    top: 115px;
+    width: 43px;
+  }
+  #interactive .pointer {
+    top: 105px;
+    left: -25px;
+    z-index: 0;
+    width: 0;
+    height: 0;
+    border-top: transparent solid 0;
+    border-right: transparent solid 36px;
+    border-bottom: #f2f2f2 solid 37px;
+    border-left: transparent solid 36px;
+  }
+  #interactive .frame {
+    opacity: 0;
+    z-index: 0;
+    width: 143px;
+    height: 224px;
+    border-radius: 20px;
+    background: #2b2f36;
+  }
+  #interactive .speaker {
+    opacity: 0;
+    top: 6px;
+    left: 44px;
+    width: 56px;
+    height: 3px;
+    border-radius: 10px;
+    background: #565e6b;
+  }
+  #interactive .button {
+    opacity: 0;
+    top: 194px;
+    left: 64px;
+    width: 18px;
+    height: 17px;
+    border-radius: 20px;
+    background: #565e6b;
+  }
+  #interactive .submit {
+    opacity: 0;
+    top: 140px;
+    left: 40px;
+    height: 0;
+    padding: 0 13px;
+    text-align: center;
+    color: #fff;
+    font-family: Gotham-Black;
+    font-size: 9px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    border-bottom: 5px solid #7d2918;
+    border-radius: 0 0 1px 1px;
+    background: #bf3f24;
+  }
+
+  #interactive.animate .speech {
+    -webkit-animation: speech-expand 0.9s 2.3s cubic-bezier(0, 1.65, 0.245, 0.785) forwards;
+  }
+  #interactive.animate .pointer {
+    -webkit-animation: pointer-slide 0.5s 2s ease-in-out forwards;
+  }
+  #interactive.animate .frame {
+    -webkit-animation: frame-scale 0.6s 2.6s cubic-bezier(0, 1.65, 0.245, 0.785) forwards;
+  }
+  #interactive.animate .speaker {
+    -webkit-animation: speaker-expand 0.6s 3.2s forwards;
+  }
+  #interactive.animate .button {
+    -webkit-animation: button-expand 0.7s 3.2s cubic-bezier(0, 1.65, 0.245, 0.785) forwards;
+  }
+  #interactive.animate .submit {
+    -webkit-animation: submit-slide 0.3s 3.7s ease-out forwards, submit-click 0.5s 4.4s forwards;
+  }
+
+  /* Go Go Gadget...Animations */
+  @-webkit-keyframes pointer-slide {
+    0% {
+      -webkit-transform: translateX(0);
+    }
+
+    100% {
+      -webkit-transform: translateX(50px);
+      opacity: 0;
+    }
+  }
+  @-webkit-keyframes speech-expand {
+    100% {
+      height: 163px;
+    }
+  }
+  @-webkit-keyframes frame-scale {
+    0% {
+      opacity: 1;
+      -webkit-transform: scale(0);
+    }
+
+    100% {
+      opacity: 1;
+      -webkit-transform: scale(1);
+    }
+  }
+  @-webkit-keyframes speaker-expand {
+    0% {
+      opacity: 1;
+      -webkit-transform: scaleX(0);
+    }
+
+    100% {
+      opacity: 1;
+      -webkit-transform: scaleX(1);
+    }
+  }
+  @-webkit-keyframes button-expand {
+    0% {
+      opacity: 1;
+      -webkit-transform: scale(0);
+    }
+
+    100% {
+      opacity: 1;
+      -webkit-transform: scale(1);
+    }
+  }
+  @-webkit-keyframes submit-slide {
+    0% {
+      opacity: 1;
+      height: 0;
+      padding-top: 0;
+      padding-bottom: 0;
+    }
+
+    100% {
+      opacity: 1;
+      height: auto;
+      padding-top: 4px;
+      padding-bottom: 4px;
+    }
+  }
+  @-webkit-keyframes submit-click {
+    0% {
+      opacity: 1;
+    }
+
+    50% {
+      border-bottom-width: 3px;
+      top: 142px;
+    }
+
+    100% {
+      opacity: 1;
+      border-bottom-width: 5px;
+      top: 140px;
+    }
+  }
+  </style>
+</head>
+<body>
+	<!--[if lt IE 7 ]><p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p><![endif]-->
+
+  <h2>Pure CSS Icon Animation</h2>
+
+  <div id="interactive" class="animate">
+    <div class="speech"></div>
+    <div class="text text-1"></div>
+    <div class="text text-2"></div>
+    <div class="text text-3"></div>
+    <div class="text text-4"></div>
+    <div class="text text-5"></div>
+    <div class="pointer"></div>
+    <div class="frame"></div>
+    <div class="speaker"></div>
+    <div class="button"></div>
+    <div class="submit">Submit</div>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-2.1.0.min.js"></script>
+  <script>
+  (function() {
+    $("#interactive").hover(function() {
+      $(this).removeClass("animate");
+      this.offsetWidth = this.offsetWidth;
+      $(this).addClass("animate");
+    });
+  }).call(this);
+  </script>
+</body>
+</html>
